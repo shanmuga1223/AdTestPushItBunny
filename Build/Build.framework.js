@@ -2164,6 +2164,14 @@ var ASM_CONSTS = {
       console.log ("Hello World from Jslib!");
     }
 
+  function _InterstitialAdSts() {
+      if (isAdReady) {
+          unityGameInstance.SendMessage('Jio', 'IntrestitialAdSts',1);
+      } else {
+          unityGameInstance.SendMessage('Jio', 'IntrestitialAdSts',0);
+      }
+    }
+
   var JS_Accelerometer = null;
   
   var JS_Accelerometer_callback = 0;
@@ -15968,6 +15976,7 @@ function checkIncomingModuleAPI() {
 var asmLibraryArg = {
   "GetJSMemoryInfo": _GetJSMemoryInfo,
   "Hello": _Hello,
+  "InterstitialAdSts": _InterstitialAdSts,
   "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
   "JS_Accelerometer_Start": _JS_Accelerometer_Start,
   "JS_Accelerometer_Stop": _JS_Accelerometer_Stop,
